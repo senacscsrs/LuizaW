@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Estrelinhas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Meus projetos</h1>
+    <a class="button" href="trabalho1">Trabalho 1</a>
+    <a class="button" href="trabalho2">Trabalho 2</a>
+    <a class="button" href="trabalho3">Trabalho 3</a>
+  <!-- Gera várias estrelinhas -->
+   <script>
+    for (let i = 0; i < 50; i++) {
+      const estrela = document.createElement("div");
+      estrela.className = "estrela";
+      estrela.style.left = Math.random() * 100 + "vw";
+      estrela.style.top = Math.random() * 100 + "vh";
+      estrela.style.animationDuration = 5 + Math.random() * 5 + "s";
+      document.body.appendChild(estrela);
+    }
+  </script>
+</body>
+</html>
