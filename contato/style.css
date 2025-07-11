@@ -273,3 +273,52 @@ h2 {
   border-radius: 5px;
   box-shadow: #1f0a26 0px 0px 10px;
 }
+.informações {
+    background-color: #582762;
+    
+    padding: 10px;
+    margin: 10px auto;
+    margin-right: auto;
+    margin-left: auto;
+    width: 10%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #44164a;
+    transition: transform 0.2s;
+    font-family: 'arial black';
+    text-align: center;
+    
+}
+    .informações a {
+    text-decoration: none;
+    background-color: #8e537c;
+    font-weight: bold;
+    color: #531263;
+}
+.informações:hover {
+    transform: scale(1.05);
+    background-color: #7e4b60;
+    color: #2c0d23;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+header{
+    width: 100%;
+    height: auto;
+}
+.rodape{
+    background-color: #582762;
+    color: #060506;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+}
+.botaos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
