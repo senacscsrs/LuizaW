@@ -1,0 +1,24 @@
+body {
+    font-family: 'Bebas Neue', cursive;
+    background-color: #5a8396;
+    margin: 0; 
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #144152;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    background-color: #376274;
+    font-family: 'Bebas Neue', cursive;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    transform: translateY(0);
+}
+
+h1:hover {
+    transform: translateY(-5px);
+}
