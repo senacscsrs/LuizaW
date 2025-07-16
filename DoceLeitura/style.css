@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #a52a2a;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #752b2b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-shadow: black 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.logo {
+    width: 50px;
+    height: auto;
+    object-fit: cover;
+    margin-right: 50px;
+    border-radius: 50%;
+}
+img {
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    right: 100px;
+}
+.botao {
+    background-color: #4e2626;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-size: larger;
+}
+
+.botao:hover {
+    background-color: #e0d77a;
+}
+.botoes-header {
+    display: flex;
+    gap: 20px;
+}
+
+.botao {
+    background-color: #4e2626;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.botao:hover {
+    background-color: #e0d77a;
+}
+
+h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3em;
+    color: black;
+    margin-right: 50px;
+}
+
+.leitura {
+    font-family: 'Brush Script MT', cursive;
+    font-weight: normal;
+    font-size: 1em;
+}
+
+.imagem-cafe {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.imagem-cafe img {
+    width: 250px;
+    border-radius: 15px;
+}
+
+section {
+    padding: 20px;
+    color: white;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: #752b2b;
+    color: white;
+    padding: 10px 20px;
+}
+
+footer .livros-img {
+    width: 100px;
+    height: auto;
+}
+

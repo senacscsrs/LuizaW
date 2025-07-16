@@ -22,3 +22,11 @@ h1 {
 h1:hover {
     transform: translateY(-5px);
 }
+p {
+    font-size: 20px;
+    color: #144152;
+    line-height: 1.6;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+}
