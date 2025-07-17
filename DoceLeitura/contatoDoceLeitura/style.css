@@ -1,0 +1,32 @@
+/* CONTATO */
+.contato {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px;
+    position: relative;
+    color: black;
+}
+
+.info-contato {
+    font-size: 1.5em;
+    line-height: 2;
+    margin-left: 40px;
+}
+
+.contato h2 {
+    background-color: #4e2626;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.caneca-img img {
+    width: 100px;
+    position: relative;
+    bottom: -30px;
+    right: 40px;
+}
