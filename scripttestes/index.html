@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+let nome = prompt("Digite seu nome:");
+let distancia = parseFloat(prompt("Digite a distância da viagem (em km):"));
+let velocidade = parseFloat(prompt("Digite a velocidade média (em km/h):"));
+let consumo = parseFloat(prompt("Digite o consumo do carro (km por litro):"));
+let precoGasolina = parseFloat(prompt("Digite o preço da gasolina (por litro):"));
+
+let tempo = distancia / velocidade;
+let litrosNecessarios = distancia / consumo;
+let gastoTotal = litrosNecessarios * precoGasolina;
+
+let mensagem = "Olá, " + nome + "!\n" +
+               "Tempo estimado de viagem: " + tempo.toFixed(2) + " horas\n" +
+               "Litros necessários: " + litrosNecessarios.toFixed(2) + " L\n" +
+               "Gasto total: R$ " + gastoTotal.toFixed(2);
+alert(mensagem);
+console.log(mensagem);
+</script>
+</body>
+</html>

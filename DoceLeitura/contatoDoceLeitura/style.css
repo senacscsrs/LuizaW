@@ -1,16 +1,96 @@
-/* CONTATO */
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CORPO E FUNDOS */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #a52a2a; /* fundo vermelho queimado */
+    color: #000;
+}
+
+/* TOPO (HEADER) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #752b2b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* LOGO PRINCIPAL À ESQUERDA */
+.logo {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* TÍTULO DOCE LEITURA */
+h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3em;
+    color: black;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.leitura {
+    font-family: cursive;
+    font-weight: normal;
+    font-size: 0.8em;
+}
+
+/* MENU DE BOTÕES */
+.botoes-header {
+    display: flex;
+    gap: 20px;
+}
+
+.botao {
+    background-color: #4e2626;
+    color: black;
+    padding: 10px 25px;
+    border-radius: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.2em;
+    box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.botao:hover {
+    background-color: #e0d77a;
+    color: black;
+}
+
+.botao.ativo {
+    background-color: #a52a2a;
+    border: 3px solid #4e2626;
+}
+
+/* LOGO NO CANTO SUPERIOR DIREITO */
+.logo-canto {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 80px;
+}
+
+/* SEÇÃO DE CONTATO */
 .contato {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 60px;
     position: relative;
-    color: black;
 }
 
 .info-contato {
-    font-size: 1.5em;
-    line-height: 2;
     margin-left: 40px;
 }
 
@@ -20,10 +100,16 @@
     padding: 10px 30px;
     border-radius: 15px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
-    font-size: 1.8em;
-    margin-bottom: 20px;
+    font-size: 2em;
+    margin-bottom: 30px;
 }
 
+.info-contato p {
+    font-size: 1.6em;
+    margin: 10px 0;
+}
+
+/* IMAGEM DA CANECA */
 .caneca-img img {
     width: 100px;
     position: relative;

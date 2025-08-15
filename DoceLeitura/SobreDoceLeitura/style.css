@@ -1,0 +1,180 @@
+/* === GERAL === */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #a52a2a;
+    font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* === CABEÇALHO === */
+header {
+    background-color: #752b2b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    text-shadow: black 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3em;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.leitura {
+    font-family: 'Cursive', serif;
+    font-size: 1.5em;
+}
+
+.botoes-header {
+    display: flex;
+    gap: 15px;
+}
+
+/* === BOTÕES DO MENU === */
+.botao {
+    background-color: #4e2626;
+    color: black;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 15px;
+    font-weight: bold;
+    font-size: 1.2em;
+    box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.botao:hover {
+    background-color: #e0d77a;
+}
+
+.botao.ativo {
+    background-color: #4e2626;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5) inset;
+}
+
+/* === LOGO NO CANTO DIREITO === */
+.logo-canto {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    width: 80px;
+    height: auto;
+}
+
+/* === SEÇÃO LOCALIZAÇÃO === */
+.localizacao {
+    padding: 50px 40px;
+}
+
+.localizacao h2 {
+    background-color: #4e2626;
+    color: black;
+    font-size: 2em;
+    padding: 10px 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    display: inline-block;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+}
+
+.localizacao p {
+    font-size: 1.6em;
+    color: black;
+    margin-bottom: 30px;
+    padding-left: 10px;
+}
+
+.localizacao img {
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* === SEÇÃO CONTATO === */
+.contato {
+    padding: 50px 40px;
+    text-align: center;
+}
+
+.contato h2 {
+    background-color: #4e2626;
+    color: black;
+    font-size: 2em;
+    padding: 10px 30px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    display: inline-block;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+}
+
+.contato p {
+    font-size: 1.6em;
+    color: black;
+    margin: 20px 0;
+}
+
+/* === SEÇÃO SOBRE === */
+.sobre {
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sobre h2 {
+    background-color: #4e2626;
+    color: black;
+    font-size: 2em;
+    padding: 10px 30px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    display: inline-block;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+}
+
+.conteudo-sobre {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.foto-lateral {
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.texto-sobre {
+    font-size: 1.5em;
+    color: black;
+    max-width: 600px;
+    line-height: 1.7;
+    text-align: justify;
+    font-family: Georgia, serif;
+}
+.isaeluiza {
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+}

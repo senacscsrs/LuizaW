@@ -81,6 +81,7 @@ h1 {
 .imagem-cafe img {
     width: 250px;
     border-radius: 15px;
+    left: 50px;
 }
 
 section {
