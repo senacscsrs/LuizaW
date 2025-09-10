@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Teste 3</title>
+</head>
+<body>
+    <h1>Bem-vindo ao Teste 3</h1>
+    <p>Este é um parágrafo de exemplo.</p>
+    <script>
+        let nome = prompt("Digite seu nome:");
+        let nota1 = parseFloat(prompt("Digite a primeira nota:"));
+        let nota2 = parseFloat(prompt("Digite a segunda nota:"));
+        let media = (nota1 + nota2) / 2;
+        switch (Math.floor(media)) {
+            case 10:
+            case 9:
+                alert(`Parabéns ${nome}, você tirou A!`);
+                break;
+            case 8:
+            case 7:
+                alert(`Bom trabalho ${nome}, você tirou B!`);
+                break;
+            case 6:
+            case 5:
+                alert(`Você tirou C, ${nome}. Estude mais!`);
+                break;
+            case 4:
+            case 3:
+                alert(`Você tirou D, ${nome}. É melhor se esforçar!`);
+                break;
+            default:
+                alert(`Você tirou E, ${nome}. Estude muito mais!`);
+        }
+        alert(`Média: ${media.toFixed(2)}`);
+    </script>
+</body>
+</html>

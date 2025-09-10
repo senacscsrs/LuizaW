@@ -58,28 +58,30 @@ h2 {
 }
 
 .social-icons {
-  margin: 50px 30px;
-  padding: 20px;
-  border: 5px solid #41164e;
-  border-radius: 15px;
-  background-color: #8758a4;
-  box-shadow: #1f0a26 0px 0px 10px;
-  text-shadow: #0000003e 1px 1px 2px;
-  color: #422e58;
-  padding: 40px;
   display: flex;
-  align-items: space-between;
-  flex-wrap: wrap;
-  word-spacing: 10px;
-  float: left;
-  margin: 20px 10px;
-  border: 1px solid #41164e;
-  border-radius: 15px;
-  background-color: #8758a4;
-  box-shadow: #1f0a26 0px 0px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  box-shadow: #111 0px 0px 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #41164e;
+  margin: 20px auto;
+  width: fit-content;
   text-shadow: #0000003e 1px 1px 2px;
-  color: #422e58;
-  align-items: space-between;
+  color: #ffffff;
+  font-family: 'arial black';
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.social-icons:hover {
+  transition: transform 0.5s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.social-icons:hover {
+  transform: scale(1.2);
 }
 
 .letterboxd {
@@ -103,16 +105,6 @@ h2 {
   animation: pulse 1.5s infinite alternate;
 }
 
-@keyframes pulse {
-  from {
-    box-shadow: 0 0 5px rgb(174, 152, 209);
-  }
-
-  to {
-    box-shadow: 0 0 20px rgb(162, 145, 227), 0 0 40px rgb(134, 112, 196);
-  }
-}
-
 .playlist {
   background-color: #203f28;
   color: rgb(0, 0, 0);
@@ -130,16 +122,6 @@ h2 {
   border: none;
   border-radius: 10px;
   animation: pulse 1.5s infinite alternate;
-}
-
-@keyframes pulse {
-  from {
-    box-shadow: 0 0 5px rgb(27, 61, 27);
-  }
-
-  to {
-    box-shadow: 0 0 20px rgb(104, 143, 104), 0 0 40px rgb(20, 45, 20);
-  }
 }
 
 
@@ -169,16 +151,6 @@ h2 {
   animation: pulse 1.5s infinite alternate;
 }
 
-@keyframes pulse {
-  from {
-    box-shadow: 0 0 5px rgb(209, 152, 167);
-  }
-
-  to {
-    box-shadow: 0 0 20px rgb(175, 95, 109), 0 0 40px rgb(20, 45, 20);
-  }
-}
-
 .logo-size {
   width: 15px;
   height: 15px;
@@ -188,21 +160,22 @@ h2 {
 }
 
 .insta {
-  width: 15px;
-  height: 15px;
+  background-color: #e1306c;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
   position: relative;
-  top: 2px;
-  margin-right: 5px;
 }
-
-@keyframes pulse {
-  from {
-    box-shadow: 0 0 5px rgb(241, 177, 237);
-  }
-
-  to {
-    box-shadow: 0 0 20px rgb(255, 151, 229), 0 0 40px rgb(255, 156, 237);
-  }
+.insta:hover {
+  background-color: #c13584;
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+  border: none;
+  border-radius: 10px;
+  animation: pulse 1.5s infinite alternate;
 }
 
 .vsco {
@@ -225,16 +198,6 @@ h2 {
   animation: pulse 1.5s infinite alternate;
 }
 
-@keyframes pulse {
-  from {
-    box-shadow: 0 0 5px rgb(163, 163, 163);
-  }
-
-  to {
-    box-shadow: 0 0 20px rgb(166, 166, 166), 0 0 40px rgb(162, 162, 162);
-  }
-}
-
 .github {
   background-color: #ffffff;
   color: #000000;
@@ -253,16 +216,6 @@ h2 {
   border: none;
   border-radius: 10px;
   animation: pulse 1.5s infinite alternate;
-}
-
-@keyframes pulse {
-  from {
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.548);
-  }
-
-  to {
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.456), 0 0 40px rgba(255, 255, 255, 0.325);
-  }
 }
 
 .footer {
@@ -321,4 +274,11 @@ header{
     justify-content: center;
     align-items: center;
     gap: 20px;
+    box-shadow: #111 0px 0px 10px;
+}
+.redes {
+    box-shadow: #111 0px 0px 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 10px 20px;
 }
