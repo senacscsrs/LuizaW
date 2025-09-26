@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Radson - Diagnóstico por Imagem</title>
+  <meta name="description" content="Radson - Diagnóstico por imagem: ressonância, tomografia, ecografia, mamografia e mais. Agende online ou pelo WhatsApp.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="radson-logo">
+        <img src="logorad.png" alt="Logo Radson">
+        <div>
+          <div style="font-weight:700">Diagnóstico por Imagem</div>
+          <div class="radson-tag">Precisão • Cuidado • Confiança</div>
+        </div>
+      </div>
+
+      <nav aria-label="menu">
+        <button class="menu-toggle" aria-controls="main-nav" aria-expanded="false">☰</button>
+        <ul id="main-nav">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#unidades">Unidades</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="cta-row">
+        <a class="btn btn-outline" id="btn-unidades" href="#unidades">Unidades</a>
+        <a class="btn btn-primary" id="btn-agenda-online" href="#agenda">Agendamento</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+      <div class="bg" role="img" aria-label="Fachada Radson"></div>
+      <a href="xRadson-Ana-Nery.jpg.pagespeed.ic.bzTYO8XS5k (1).webp"></a>
+      <div class="hero-inner container">
+        <h1>Diagnóstico por Imagem com Precisão e Cuidado</h1>
+        <p>Tecnologia avançada e uma equipe de especialistas dedicados à sua saúde. Agende seu exame de forma simples e segura.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#agenda" onclick="openModal('agendaModal')">Agendar Online</a>
+          <a class="btn btn-outline" href="https://wa.me/5591999999999?text=Olá%2C%20gostaria%20de%20agendar%20um%20exame" target="_blank" rel="noopener">Agendar por WhatsApp</a>
+          <a class="btn" href="#preparo">Ver Preparos</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE & PREPARO INTERATIVO -->
+    <section id="sobre" class="container">
+      <div class="two-col">
+        <div>
+          <h2>Sobre a Radson</h2>
+          <p class="small">A Radson oferece exames de imagem com atendimento humanizado. Nossa equipe inclui radiologistas, técnicos e equipe de suporte para garantir um fluxo seguro e acolhedor.</p>
+
+          <div style="margin-top:18px" class="card">
+            <h3 style="margin-top:0">Preparo Interativo</h3>
+            <p class="small">Selecione o exame para ver o preparo recomendado (orientações gerais — seguir as orientações específicas fornecidas pelo serviço).</p>
+            <div class="prep-select">
+              <select id="examSelect" aria-label="Selecione o exame">
+                <option value="">-- Escolha o exame --</option>
+                <option>Ressonância Magnética</option>
+                <option>Ecografia (Ultrassom)</option>
+                <option>Tomografia Computadorizada</option>
+                <option>Radiografia</option>
+                <option>Mamografia</option>
+                <option>Densitometria Óssea</option>
+              </select>
+              <button class="btn btn-outline" onclick="copyPrep()">Copiar orientação</button>
+            </div>
+            <div id="prepResult" class="prep-result" aria-live="polite">Escolha um exame para ver as orientações.</div>
+          </div>
+
+        </div>
+
+        <aside>
+          <div class="card">
+            <h3>Agendamentos e Resultados</h3>
+            <p class="small">Agende pelo WhatsApp ou pelo nosso formulário. Acesso para resultados disponível para pacientes e médicos através de token seguro (implementação com backend).</p>
+            <div style="display:flex;gap:10px;margin-top:12px">
+              <button class="btn btn-primary" onclick="openModal('agendaModal')">Agendar Online</button>
+              <button class="btn" onclick="openModal('resultModal')">Acesso a Resultados</button>
+            </div>
+          </div>
+
+          <div style="margin-top:12px;text-align:center">
+            <img src="assets/logo-placeholder.png" alt="Logo Radson" style="max-width:100%;opacity:0.9">
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos">
+      <div class="container">
+        <h2>Serviços</h2>
+        <p class="small">Atendemos uma ampla gama de exames de imagem. Clique em um serviço para mais detalhes.</p>
+        <div class="services" style="margin-top:16px">
+          <div class="service">
+            <h4>Ressonância Magnética</h4>
+            <p class="small">Exame sem radiação, ideal para tecidos moles. Indicado para neurologia, ortopedia e avaliação de órgãos.</p>
+          </div>
+          <div class="service">
+            <h4>Tomografia Computadorizada (TC)</h4>
+            <p class="small">Exame com radiação para rápido diagnóstico de traumas e avaliar estruturas com alto detalhe.</p>
+          </div>
+          <div class="service">
+            <h4>Ecografia / Ultrassom</h4>
+            <p class="small">Exame com ultrassom, útil para abdome, pélvico, obstétrico e avaliação vascular.</p>
+          </div>
+          <div class="service">
+            <h4>Radiografia</h4>
+            <p class="small">Raio‑X para ossos, tórax e acompanhamento de fraturas.</p>
+          </div>
+          <div class="service">
+            <h4>Mamografia</h4>
+            <p class="small">Exame de rastreamento e diagnóstico da mama.</p>
+          </div>
+          <div class="service">
+            <h4>Densitometria Óssea</h4>
+            <p class="small">Avaliação da massa óssea e risco de osteoporose.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section class="container">
+      <h2>Diferenciais</h2>
+      <div class="difs" style="margin-top:12px">
+        <div class="dif">
+          <h4>Preparo Interativo</h4>
+          <p class="small">Orientações claras e diretas para cada exame — reduz tempo de espera e retrabalhos.</p>
+        </div>
+        <div class="dif">
+          <h4>Agendamento Direto por WhatsApp</h4>
+          <p class="small">Resposta rápida e confirmação pelo mesmo canal, fácil para qualquer público.</p>
+        </div>
+        <div class="dif">
+          <h4>Área do Paciente</h4>
+          <p class="small">Resultados digitais e área segura para médicos acessarem laudos (integração futura).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- UNIDADES -->
+    <section id="unidades">
+      <div class="container">
+        <h2>Unidades</h2>
+        <p class="small">Selecione uma unidade para ver endereço e telefone.</p>
+        <div class="units" style="margin-top:12px">
+          <div class="card">
+            <strong>Radson Centro</strong>
+            <div class="small">Rua Exemplo, 1401 - Centro<br>Telefone: (51) 2109-5151</div>
+          </div>
+          <div class="card">
+            <strong>Radson Estação</strong>
+            <div class="small">Avenida das Flores, 240<br>Telefone: (51) 2109-5152</div>
+          </div>
+          <div class="card">
+            <strong>Radson Leste</strong>
+            <div class="small">Rua do Leste, 980<br>Telefone: (51) 2109-5153</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO / FOOTER -->
+    <section id="contato">
+      <div class="container">
+        <div class="card">
+          <h3>Fale Conosco</h3>
+          <p class="small">Telefone, WhatsApp e formulário para enviar dúvidas ou solicitar informações de convênios.</p>
+          <form id="contactForm" onsubmit="event.preventDefault(); alert('Obrigado! Entraremos em contato em breve.');">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <input class="form-control" placeholder="Nome" required>
+              <input class="form-control" placeholder="Telefone/WhatsApp" required>
+            </div>
+            <input class="form-control" placeholder="E-mail (opcional)" style="margin-top:12px">
+            <textarea class="form-control" placeholder="Mensagem" style="margin-top:12px" rows="4"></textarea>
+            <div style="margin-top:12px"><button class="btn btn-primary" type="submit">Enviar</button></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+      <div>
+        <div style="font-weight:700">RADSON</div>
+        <div class="small">Diagnóstico por Imagem • Todos os direitos reservados</div>
+      </div>
+      <div class="small">Desenvolvido com ❤️ • Site demonstrativo</div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a class="whatsapp-float" href="https://wa.me/5591999999999?text=Olá%2C%20gostaria%20de%20agendar%20um%20exame" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5C21 16.194 16.97 20 12 20a8 8 0 0 1-4.29-1.13L3 20l1.33-5.45A8 8 0 1 1 21 11.5z" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    <span style="font-weight:700">WhatsApp</span>
+  </a>
+
+  <!-- Modals -->
+  <div id="agendaModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <h3>Agendamento Online</h3>
+      <p class="small">Preencha os dados. (Este formulário é um exemplo — precisa de backend para funcionar de verdade).</p>
+      <form onsubmit="event.preventDefault(); alert('Pedido de agendamento enviado!'); closeModal('agendaModal')">
+        <input class="form-control" placeholder="Nome" required>
+        <input class="form-control" placeholder="Telefone" required style="margin-top:8px">
+        <select class="form-control" style="margin-top:8px">
+          <option>Selecione o exame</option>
+          <option>Ressonância Magnética</option>
+          <option>Tomografia</option>
+          <option>Ecografia</option>
+        </select>
+        <div style="display:flex;gap:8px;margin-top:12px;justify-content:flex-end">
+          <button type="button" class="btn" onclick="closeModal('agendaModal')">Fechar</button>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="resultModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <h3>Acesso a Resultados</h3>
+      <p class="small">Área segura para visualizar resultados (implementar autenticação no backend).</p>
+      <form onsubmit="event.preventDefault(); alert('Área em desenvolvimento'); closeModal('resultModal')">
+        <input class="form-control" placeholder="Código do paciente / token" required>
+        <div style="display:flex;gap:8px;margin-top:12px;justify-content:flex-end">
+          <button type="button" class="btn" onclick="closeModal('resultModal')">Fechar</button>
+          <button type="submit" class="btn btn-primary">Acessar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // ====== Dados de preparo (orientações genéricas; substituir conforme as orientações do serviço) ======
+    const preps = {
+      'Ressonância Magnética': `Orientações gerais:\n- Informe ao setor sobre marca-passo, próteses metálicas ou claustrofobia.\n- Jejum de 4 a 6 horas pode ser solicitado para exames com contraste.\n- Traga exames anteriores e documentos pessoais.\nEstas são orientações gerais: siga a orientação fornecida pela clínica.`,
+      'Ecografia (Ultrassom)': `Orientações gerais:\n- Ecografia abdominal: jejum de 6 a 8 horas (não ingestão de alimentos gordurosos).\n- Ecografia pélvica/obstétrica: encher a bexiga (beber água 1 hora antes).\n- Trazer pedido médico e exames anteriores.`,
+      'Tomografia Computadorizada': `Orientações gerais:\n- Para tomografia com contraste oral/venoso pode ser necessário jejum de 4 a 6 horas.\n- Informe alergias a contraste e medicações em uso.\n- Trazer documentos e exames prévios.`,
+      'Radiografia': `Orientações gerais:\n- Normalmente não requer preparo.\n- Informe se há possibilidade de gravidez.\n- Retirar objetos metálicos da região a ser examinada.`,
+      'Mamografia': `Orientações gerais:\n- Não usar cremes, óleos ou desodorantes nas axilas e mamas no dia do exame.\n- Evitar agendar no período menstrual quando possível.\n- Trazer laudos anteriores, se houver.`,
+      'Densitometria Óssea': `Orientações gerais:\n- Evitar uso de suplementos de cálcio nas 24-48 horas anteriores (confira com o médico).\n- Trazer exames anteriores e documentos.`
+    }
+
+    // Elementos
+    const examSelect = document.getElementById('examSelect')
+    const prepResult = document.getElementById('prepResult')
+
+    examSelect.addEventListener('change', () => {
+      const value = examSelect.value
+      if(!value){ prepResult.textContent = 'Escolha um exame para ver as orientações.'; return }
+      prepResult.textContent = preps[value] || 'Orientações não encontradas.'
+    })
+
+    function copyPrep(){
+      const text = prepResult.textContent
+      if(!text || text.includes('Escolha um exame')){ alert('Selecione um exame primeiro.'); return }
+      navigator.clipboard?.writeText(text).then(()=> alert('Orientação copiada para a área de transferência'))
+    }
+
+    // Modal helpers
+    function openModal(id){
+      const el = document.getElementById(id); if(!el) return
+      el.classList.add('open'); el.setAttribute('aria-hidden','false')
+    }
+    function closeModal(id){
+      const el = document.getElementById(id); if(!el) return
+      el.classList.remove('open'); el.setAttribute('aria-hidden','true')
+    }
+
+    // Mobile menu toggle
+    const toggle = document.querySelector('.menu-toggle')
+    const mainNav = document.getElementById('main-nav')
+    toggle?.addEventListener('click', ()=>{
+      const expanded = toggle.getAttribute('aria-expanded') === 'true'
+      toggle.setAttribute('aria-expanded', String(!expanded))
+      mainNav.style.display = expanded ? 'none' : 'flex'
+    })
+
+    // Small accessibility: close modals on ESC
+    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape'){ document.querySelectorAll('.modal.open').forEach(m=>m.classList.remove('open')) } })
+
+  </script>
+</body>
+</html>

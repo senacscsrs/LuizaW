@@ -239,10 +239,10 @@ while (saldo > 0) {
 }
 
 // 25. Use while para mostrar todos os números ímpares entre 1 e 20.
-let i = 1;
-while (i < 20) {
-    console.log(i);
-    i += 2;
+let impar = 1;
+while (impar < 20) {
+    console.log(impar);
+    impar += 2;
 }
 
 // 26. Crie uma variável senha e simule uma tentativa de senha com while, até que a senha correta "abcd" seja digitada.
@@ -263,7 +263,24 @@ do {
 console.log("Senha correta!");
 
 // 28. Use do/while para imprimir números de 0 a 3.
+let i = 0;
+do {
+    console.log(i);
+    i++;
+} while (i <= 3);
 
 // 29. Crie um do/while que mostre um menu com três opções (simulado com uma variável) e só saia quando a opção for "sair".
+let opcao = "";
+do {
+    console.log("Menu:");
+    opcao = "sair"; // Simulando a escolha da opção
+} while (opcao !== "sair");
+console.log("Saindo do menu...");
 
 // 30. Use do/while para gerar números de 1 até 5 e mostrá-los no console.
+let j = 1;
+do {
+    console.log(j);
+    j++;
+    console.log(j);
+} while (j <= 5);
