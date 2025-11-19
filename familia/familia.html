@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Família</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="introdução">
+<h1>Família</h1>
+<p>Hoje vou mostrar sobre minha Família.</p>
+<p>E família não é somente de sangue.</p>
+<p>é aqueles que cuidam de nós e sempre estão lá por tudo.</p>
+<p>E claro: a de quatro patas.</p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="foto1">
+    <img src="gramado1.jpeg" onclick="mostrarNome()">
+    </div>
+  <div id="nome">Meus pais</div>
+</body>
+</html>
+<script>
+  function mostrarNome() {
+    const nome = document.getElementById("nome");
+    nome.style.display = nome.style.display === "block" ? "none" : "block";
+  }
+</script>

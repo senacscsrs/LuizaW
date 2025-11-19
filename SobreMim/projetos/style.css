@@ -1,0 +1,118 @@
+body {
+      background: rgb(183, 144, 201);
+      overflow: hidden;
+    }
+
+    .estrela {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: white;
+      border-radius: 50%;
+      animation: flutuar 10s linear infinite;
+    }
+
+    @keyframes flutuar {
+      from {
+        transform: translateY(100vh);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
+    }
+    h1 {
+      text-align: center;
+      color: rgb(102, 53, 103);
+      font: bebas-neue, sans-serif;
+      font-size: 3rem;
+      margin-top: 20px;
+    }
+    .button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      position: left;
+      background-color: rgb(102, 53, 103);
+      color: rgb(162, 114, 168);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 1.0rem;
+    }
+    .button a {
+    text-decoration: none;
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: #8e537c;
+    font-weight: bold;
+    color: #531263;
+    }
+    .button:hover {
+      background-color: rgb(134, 42, 68);
+      color: rgb(207, 100, 129);
+      transition: background-color 0.3s ease;
+      transition: transform 0.3s ease;
+      transition: transform 0.2s;
+      transform: scale(1.05);
+    }
+    header {
+      background-color: var(--primary-color);
+      color: var(--text-light);
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: 20px;
+      z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        size-adjust: 100%;
+        
+    }
+    .informações {
+    background-color: #582762;
+    
+    padding: 10px;
+    margin: 10px auto;
+    margin-right: auto;
+    margin-left: auto;
+    width: 10%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #44164a;
+    transition: transform 0.2s;
+    font-family: 'arial black';
+    text-align: center;
+    
+}
+    .informações a {
+    text-decoration: none;
+    background-color: #8e537c;
+    font-weight: bold;
+    color: #531263;
+}
+.informações:hover {
+    transform: scale(1.05);
+    background-color: #7e4b60;
+    color: #2c0d23;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+header{
+    width: 100%;
+    height: auto;
+}
+.rodape{
+    background-color: #582762;
+    color: #060506;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+}
+.botaos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}

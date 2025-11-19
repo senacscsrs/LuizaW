@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contato</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</html>
+<a>Estoque</a>
+<script>
+   let nomeProduto = "Produto Exemplo";
+    let mediaPreco = 3.50; // Preço médio do produto
+    let quantidadeEstoque = 100; // Quantidade inicial em estoque
+    let nome = prompt("Digite seu nome:");
+
+    alert(`Olá, ${nome}! Bem-vindo(a) ao estoque.`);
+    let produtos = prompt("Digite quantos itens foram comprados:");
+    alert(`Você comprou ${produtos} itens.`);
+
+    let estoque = 100 - produtos;
+
+       if (estoque < 20) {
+        alert("Estoque baixo! Apenas " + estoque + " itens restantes.");
+    } else if (estoque > 30) {
+        alert("Estoque razoável. Itens restantes: " + estoque);
+    } else {
+        alert("Estoque suficiente. Itens restantes: " + estoque);
+    }
+    let valorTotal = produtos * mediaPreco;
+    alert(`O valor total da compra é R$${valorTotal}.`);
+
+</script>

@@ -1,0 +1,32 @@
+body {
+background-color: #d9a8a8;
+    color: #a92a36;
+}
+.introdução{
+    background-color:#d15c57;
+    box-shadow: #cc3747 0px 4px 8px 0px;
+    border-radius: 10px;
+    padding: 10px;
+}
+p{
+    font-size: 30px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.footer{
+    background-color: #c89adc;
+    color: #591e59;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+img{
+    border-radius: 10px;
+    box-shadow: #cc3747 0px 4px 8px 0px;
+    width: 600px;
+    height: auto;
+}
+
