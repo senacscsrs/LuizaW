@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Família: Meu Porto Seguro</title>
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f3f6ff;
+      color: #333;
+    }
+
+    header{
+      background: #4a6cf7;
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+
+    main{ max-width: 900px; margin: auto; padding: 20px; }
+
+    .card{
+      background: white;
+      padding: 18px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    .center{ text-align: center; }
+
+    .highlight{ color: #ff8800; font-weight: bold; }
+
+    button{
+      padding: 10px 15px;
+      background:#4a6cf7;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor:pointer;
+    }
+
+    button:hover{ background:#3653c9; }
+
+    .gallery img{
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .gallery{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+      gap: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Família: Meu Porto Seguro</h1>
+  <h3>Site feito com HTML, CSS e JavaScript</h3>
+</header>
+
+<main>
+  <section class="card">
+    <h2>Sobre Minha Família</h2>
+    <p>Minha família é meu maior apoio. Cada momento juntos constrói lembranças que guardo para sempre.</p>
+    <p>Este site foi criado para homenagear essas pessoas especiais usando tudo que aprendi este ano em programação.</p>
+    <p>Explore as fotos, veja mensagens e interaja com os botões abaixo!</p>
+  </section>
+
+  <section class="card">
+    <h2>Lista de Qualidades da Minha Família</h2>
+    <ul>
+      <li>União</li>
+      <li>Amor</li>
+      <li>Respeito</li>
+      <li>Companheirismo</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Galeria</h2>
+    <div class="gallery" id="galeria">
+      <img src="https://via.placeholder.com/400x250?text=Família+Linda" alt="foto" />
+    </div>
+    <br>
+    <button id="addFoto">Adicionar foto</button>
+  </section>
+
+  <section class="card center">
+    <h2>Mensagem Especial</h2>
+    <button id="mostrarMensagem">Mostrar frase especial</button>
+    <p id="frase" style="display:none; margin-top:10px;">A família é onde nossa história começa e o amor nunca termina.</p>
+  </section>
+
+  <section class="card">
+    <h2>Mensagem por Familiar</h2>
+    <select id="opcaoFamiliar">
+      <option value="">Selecione um familiar</option>
+      <option value="mae">Mãe</option>
+      <option value="pai">Pai</option>
+      <option value="irmao">Irmão</option>
+      <option value="avo">Avó</option>
+    </select>
+    <button id="enviarMsg">Enviar mensagem</button>
+  </section>
+
+  <section class="card">
+    <h2>Área Interativa</h2>
+    <p id="hoverTexto">Passe o mouse aqui 😊</p>
+  </section>
+</main>
+
+<script>
+  // ARRAYS
+  const nomes = ["Mãe", "Pai", "Irmão", "Avó"];
+  const momentos = ["Viagem em família", "Aniversário da vovó", "Natal 2023"]; 
+
+  // MATRIZ
+  const infoFamilia = [
+    ["Mãe", 45],
+    ["Pai", 47],
+    ["Irmão", 18],
+    ["Avó", 70]
+  ];
+
+  // OBJETO
+  const membro = {
+    nome: "Mãe",
+    qualidade: "carinhosa",
+    mensagem(){ return `${this.nome} é muito ${this.qualidade}!`; }
+  };
+
+  console.log(membro.mensagem());
+  console.log("Matriz da família:", infoFamilia);
+
+  // WHILE – contador simples
+  let i = 0;
+  while(i < momentos.length){
+    console.log("Momento especial:", momentos[i]);
+    i++;
+  }
+
+  // BOTÃO: Mostrar/ocultar frase (IF/ELSE)
+  const frase = document.getElementById("frase");
+  document.getElementById("mostrarMensagem").onclick = () => {
+    if(frase.style.display === "none"){
+      frase.style.display = "block";
+    } else {
+      frase.style.display = "none";
+    }
+  };
+
+  // SWITCH – mensagem por familiar
+  document.getElementById("enviarMsg").onclick = () =>{
+    const escolha = document.getElementById("opcaoFamiliar").value;
+    let mensagem;
+
+    switch(escolha){
+      case "mae": mensagem = "Mãe, obrigado por todo carinho!"; break;
+      case "pai": mensagem = "Pai, seu apoio significa tudo!"; break;
+      case "irmao": mensagem = "Irmão, obrigado pelas risadas!"; break;
+      case "avo": mensagem = "Vovó, suas histórias são incríveis!"; break;
+      default: mensagem = "Escolha um familiar!";
+    }
+    alert(mensagem);
+  };
+
+  // GALERIA – criar imagem com createElement
+  document.getElementById("addFoto").onclick = () =>{
+    const nova = document.createElement("img");
+    const rnd = Math.floor(Math.random()*3)+1;
+    nova.src = `https://via.placeholder.com/400x250?text=Foto+${rnd}`;
+    nova.style.borderRadius = "8px";
+    document.getElementById("galeria").appendChild(nova);
+  };
+
+  // EVENTO onmouseover
+  const hover = document.getElementById("hoverTexto");
+  hover.addEventListener("mouseover", () =>{
+    hover.classList.add("highlight");
+    hover.innerText = "Você trouxe alegria aqui! 💛";
+  });
+  hover.addEventListener("mouseout", () =>{
+    hover.classList.remove("highlight");
+    hover.innerText = "Passe o mouse aqui 😊";
+  });
+</script>
+
+</body>
+</html>
