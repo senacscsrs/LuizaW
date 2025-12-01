@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d9a8a8;
+    margin: 20px;
+    padding: 20px;
+}
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: #d15c57;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #a92a36;
+}   
+.família {
+    background-color: #a6423e;
+    color: #781c25;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.família:hover {
+    background-color: #c6716e;
+}
