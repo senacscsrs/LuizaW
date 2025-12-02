@@ -1,281 +1,153 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Homenagem à Família</title>
-  <style>
-    /* --- Estilização básica (requisito CSS) --- */
-    :root{
-      --bg: #fff7f0;
-      --accent: #7b3f00;
-      --muted: #5b5b5b;
-      --card-bg: #fffdfa;
-    }
-    body{
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg,var(--bg), #fff);
-      color: var(--accent);
-      line-height: 1.5;
-      padding: 24px;
-    }
-
-    header{
-      text-align: center; /* centraliza título */
-      margin-bottom: 18px;
-    }
-
-    h1{ font-size: 2.2rem; margin: 0.2rem 0; }
-    h2{ font-size: 1.6rem; color: var(--muted); }
-    p{ font-size: 1rem; color: #3a2b1f; }
-
-    /* classes exigidas: .card, .center, .highlight */
-    .card{
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 14px;
-      box-shadow: 0 6px 18px rgba(120,80,40,0.08);
-      margin: 12px 0;
-    }
-
-    .center{ display: flex; justify-content: center; align-items: center; }
-
-    .highlight{ color: #b55a00; font-weight: 700; }
-
-    /* layout simples */
-    main{
-      max-width: 980px;
-      margin: 0 auto;
-    }
-
-    .gallery{
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
-      gap: 12px;
-      margin-top: 8px;
-    }
-
-    img.family-photo{
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 8px;
-      display: block;
-    }
-
-    .controls{ display:flex; gap:10px; flex-wrap:wrap; margin-top:10px; }
-    button{ padding:10px 14px; border-radius:8px; border: none; cursor:pointer; background:#ffd8b8; color:var(--accent); }
-    button.secondary{ background:#f0e6ff; }
-
-    /* Responsividade */
-    @media (max-width:520px){
-      h1{ font-size:1.6rem; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homenagem à Minha Família</title>
 </head>
 <body>
-  <header class="card center">
-    <div>
-      <h1>Homenagem à Família Silva</h1>
-      <h2>Um site feito com carinho — HTML, CSS e JavaScript</h2>
+
+    <h1>Minha Família</h1>
+
+    <div class="caixa">
+        <h2>Sobre minha família</h2>
+        <p>Minha família é muito importante na minha vida.</p>
+        <p>Este site é uma pequena homenagem usando HTML, CSS e JavaScript.</p>
+        <p>Estou aprendendo programação e quis mostrar o que sei fazer.</p>
     </div>
-  </header>
 
-  <main>
-    <!-- Parágrafos exigidos -->
-    <section class="card">
-      <p>Este site é uma homenagem à minha família. Nele reúno memórias, fotos e mensagens especiais.</p>
-      <p>A proposta é revisar conceitos aprendidos durante o ano, usando a linguagem JavaScript para dinamizar o conteúdo.</p>
-      <p>Explore a galeria, escolha um familiar para receber uma mensagem e veja elementos sendo criados dinamicamente.</p>
-    </section>
+    <div class="caixa">
+        <h2>Qualidades da família</h2>
+        <ul>
+            <li>União</li>
+            <li>Amor</li>
+            <li>Respeito</li>
+        </ul>
+    </div>
 
-    <!-- Lista gerada automaticamente (usaremos JS para preencher) -->
-    <section class="card">
-      <h2>Lista de familiares</h2>
-      <ol id="familyList">
-        <!-- itens serão inseridos por JavaScript usando FOR -->
-      </ol>
-    </section>
+    <div class="caixa centralizar">
+        <h2>Mensagem especial</h2>
+        <button onclick="mostrarMensagem()">Mostrar mensagem</button>
+        <p id="mensagem" style="display:none; margin-top:10px;">
+            A família é o nosso maior tesouro.
+        </p>
+    </div>
 
-    <!-- Galeria com ao menos 1 imagem -->
-    <section class="card">
-      <h2>Galeria</h2>
-      <div class="gallery" id="gallery">
-        <!-- imagens padrão (pode trocar pelas suas fotos) -->
-        <figure>
-          <img class="family-photo" src="https://via.placeholder.com/400x250?text=Familia+1" alt="foto-familia-1" />
-          <figcaption>Foto da última reunião.</figcaption>
-        </figure>
-      </div>
-
-      <div class="controls">
-        <button id="togglePhraseBtn">Mostrar / Ocultar Frase Especial</button>
-        <button id="colorSwapBtn" class="secondary">Trocar cores do site</button>
-        <button id="addPhotoBtn">Adicionar foto à galeria</button>
-        <select id="memberSelect">
-          <option value="">Escolha um familiar</option>
-          <option value="pai">Pai</option>
-          <option value="mae">Mãe</option>
-          <option value="irma">Irmã</option>
-          <option value="avo">Avô</option>
+    <div class="caixa">
+        <h2>Escolha um familiar</h2>
+        <select id="escolha">
+            <option value="">Selecione...</option>
+            <option value="mae">Mãe</option>
+            <option value="pai">Pai</option>
+            <option value="irmao">Irmão</option>
         </select>
-        <button id="sendMsgBtn">Enviar mensagem especial</button>
-      </div>
 
-      <p id="specialPhrase" style="margin-top:10px; display:none;">Nossa família: onde a felicidade começa e o amor nunca termina.</p>
+        <button onclick="mensagemFamiliar()">Enviar</button>
+    </div>
 
-      <p id="hoverArea" style="margin-top:12px;">Passe o mouse aqui para ver uma surpresa.</p>
-    </section>
+    <div class="caixa">
+        <h2>Nomes da Família (Gerados com FOR)</h2>
+        <ul id="listaNomes"></ul>
+    </div>
 
-    <!-- Espaço para matriz, objeto e demonstrações no console -->
-    <section class="card">
-      <h2>Informações técnicas (console)</h2>
-      <p>Abra o console do navegador (F12 ou Ctrl+Shift+I) para ver exemplos impressos por JavaScript: matriz, objeto, contador (while) e outras saídas.</p>
-    </section>
+    <button onclick="mostrarFoto()">Escolher familiar</button>
+<img id="fotoFamiliar" width="200">
+<img id="fotoFamiliar2" width="200">
+<img id="fotoFamiliar3" width="200">
+<img id="fotoFamiliar4" width="200">
+<img id="fotoFamiliar5" width="200">
 
-  </main>
 
-  <script>
-    /* ---------- JavaScript: todas as funcionalidades pedidas ---------- */
+    <script>
 
-    // VETORES (arrays)
-    const familyNames = ['Carlos', 'Mariana', 'Luiza', 'Rafael']; // nomes (requisito: lista de nomes)
-    const specialMoments = ['Natal 2022', 'Viagem à praia 2023', 'Aniversário surpresa'];
+function mostrarFoto() {
+    let escolha = prompt("Digite: mãe, pai ou irmão");
 
-    // MATRIZ: [nome, idade]
-    const familyMatrix = [
-      ['Carlos', 55],
-      ['Mariana', 52],
-      ['Luiza', 22],
-      ['Rafael', 19]
-    ];
+    switch(escolha) {
+        case "mãe":
+            document.getElementById("fotoFamiliar").src = "Mamis.jpeg";
+            break;
 
-    // OBJETO representando 1 membro da família
-    const membroExemplo = {
-      nome: 'Luiza',
-      parentesco: 'filha',
-      talentos: ['cozinha', 'programação'],
-      saudacao: function(){ return `Olá, sou ${this.nome} e adoro minha família!`; }
-    };
+        case "pai":
+            document.getElementById("fotoFamiliar").src = "papis.jpeg";
+            document.getElementById("fotoFamiliar2").src = "papis2.jpeg";
+            document.getElementById("fotoFamiliar3").src = "papis3.jpeg";
+            break;
 
-    // Mostrar matriz e objeto no console (requisito)
-    console.log('Matriz (nome, idade):', familyMatrix);
-    console.log('Objeto (membro exemplo):', membroExemplo);
-    console.log(membroExemplo.saudacao());
+        case "irmão":
+            document.getElementById("fotoFamiliar4").src = "lucas.jpeg";
+            document.getElementById("fotoFamiliar5").src = "lucas2.jpeg";
+            break;
 
-    // USANDO FOR para preencher a lista de familiares no HTML (requisito FOR)
-    const ol = document.getElementById('familyList');
-    for(let i=0; i<familyNames.length; i++){
-      const li = document.createElement('li');
-      li.innerText = `${familyNames[i]} — ${familyMatrix[i] ? familyMatrix[i][1] + ' anos' : ''}`;
-      ol.appendChild(li);
-    }
-
-    // WHILE: contador que mostra fatos no console (requisito WHILE)
-    let contador = 0; const max = 3;
-    while(contador < max){
-      contador++;
-      console.log(`${contador}º fato legal sobre minha família: ${specialMoments[contador-1] || 'Amor e risadas'}`);
-    }
-
-    // DOM: referência a alguns elementos
-    const specialPhrase = document.getElementById('specialPhrase');
-    const togglePhraseBtn = document.getElementById('togglePhraseBtn');
-    const colorSwapBtn = document.getElementById('colorSwapBtn');
-    const addPhotoBtn = document.getElementById('addPhotoBtn');
-    const gallery = document.getElementById('gallery');
-    const hoverArea = document.getElementById('hoverArea');
-
-    // IF / ELSE: ao clicar em toggle, checar visibilidade e alternar (requisito IF/ELSE)
-    togglePhraseBtn.addEventListener('click', () => {
-      if(specialPhrase.style.display === 'none' || specialPhrase.style.display === ''){
-        specialPhrase.style.display = 'block';
-      } else {
-        specialPhrase.style.display = 'none';
-      }
-    });
-
-    // SWITCH: enviar mensagens conforme escolha
-    const memberSelect = document.getElementById('memberSelect');
-    const sendMsgBtn = document.getElementById('sendMsgBtn');
-
-    function chooseMemberMessage(key){
-      switch(key){
-        case 'pai':
-          return 'Querido pai: sua força nos inspira.';
-        case 'mae':
-          return 'Querida mãe: seu carinho é nosso lar.';
-        case 'irma':
-          return 'Irmã: obrigada por todas as risadas.';
-        case 'avo':
-          return 'Vovô: suas histórias alegram nossos encontros.';
         default:
-          return 'Escolha um familiar para enviar uma mensagem.';
-      }
+            alert("Opção inválida!");
     }
+}
 
-    sendMsgBtn.addEventListener('click', () => {
-      const choice = memberSelect.value;
-      const msg = chooseMemberMessage(choice);
-      // Mostrar mensagem usando DOM e alert (exemplos)
-      alert(msg);
-    });
+        // FOR – mostrar nomes no HTML
+        for (let i = 0; i < familiares.length; i++) {
+            document.getElementById("listaNomes").innerHTML += "<li>" + familiares[i] + "</li>";
+        }
 
-    // Evento: mouseover muda o texto (requisito EVENTOS)
-    hoverArea.addEventListener('mouseover', () =>{
-      hoverArea.innerText = 'Surpresa! Obrigado por visitar nossa homenagem.';
-      hoverArea.classList.add('highlight');
-    });
-    hoverArea.addEventListener('mouseout', () =>{
-      hoverArea.innerText = 'Passe o mouse aqui para ver uma surpresa.';
-      hoverArea.classList.remove('highlight');
-    });
+        // IF / ELSE – mostrar mensagem
+        function mostrarMensagem() {
+            const msg = document.getElementById("mensagem");
 
-    // Trocar cores do site - exemplo de manipulação de estilos (DOM)
-    let swapped = false;
-    colorSwapBtn.addEventListener('click', () => {
-      if(!swapped){
-        document.documentElement.style.setProperty('--bg','#eef9ff');
-        document.documentElement.style.setProperty('--accent','#00496b');
-        swapped = true;
-      } else {
-        document.documentElement.style.setProperty('--bg','#fff7f0');
-        document.documentElement.style.setProperty('--accent','#7b3f00');
-        swapped = false;
-      }
-    });
+            if (msg.style.display === "none") {
+                msg.style.display = "block";
+            } else {
+                msg.style.display = "none";
+            }
+        }
 
-    // Criar elementos novos com createElement (adicionando foto à galeria)
-    addPhotoBtn.addEventListener('click', () =>{
-      // exemplo: adiciona uma imagem com placeholder
-      const fig = document.createElement('figure');
-      const img = document.createElement('img');
-      img.className = 'family-photo';
-      img.alt = 'foto-adicionada';
-      // escolha de imagem aleatória entre placeholders (pode trocar pelos seus links)
-      const rand = Math.floor(Math.random()*3)+1;
-      img.src = `https://via.placeholder.com/400x250?text=Foto+${rand}`;
-      const cap = document.createElement('figcaption');
-      cap.innerText = 'Nova memória adicionada';
-      fig.appendChild(img);
-      fig.appendChild(cap);
-      gallery.appendChild(fig);
-    });
+        // SWITCH – mensagens para familiares
+        function mensagemFamiliar() {
+            let pessoa = document.getElementById("escolha").value;
+            let texto = "";
 
-    // FOR...OF: percorrer specialMoments e criar pequenas linhas informativas
-    for(const momento of specialMoments){
-      console.log('Momento especial:', momento);
-    }
+            switch (pessoa) {
+                case "mae":
+                    texto = "Mãe, obrigado por todo amor!";
+                    break;
 
-    // Exemplo de IF/ELSE extra: checagem rápida antes de criar um elemento
-    if(familyNames.length === 0){
-      console.warn('A lista de família está vazia. Adicione nomes ao array familyNames.');
-    } else {
-      console.log(`Existem ${familyNames.length} familiares na lista.`);
-    }
+                case "pai":
+                    texto = "Pai, você é meu exemplo!";
+                    break;
 
-    // A página já cumpre todos os requisitos. Personalize os arrays e imagens com seus dados.
-  </script>
+                case "irmao":
+                    texto = "Irmão, obrigado pela amizade!";
+                    break;
+
+                default:
+                    texto = "Escolha alguém!";
+            }
+
+            alert(texto);
+        }
+
+        // MATRIZ
+        const matriz = [
+            ["Mãe", 45],
+            ["Pai", 47],
+            ["Irmão", 16]
+        ];
+        console.log("Matriz da família:", matriz);
+
+        // OBJETO
+        const mae = {
+            nome: "Mãe",
+            qualidade: "carinhosa"
+        };
+        console.log("Objeto:", mae);
+
+        // WHILE – contador simples
+        let contador = 0;
+        while (contador < 3) {
+            console.log("Contagem WHILE:", contador);
+            contador++;
+        }
+    </script>
+
 </body>
 </html>
