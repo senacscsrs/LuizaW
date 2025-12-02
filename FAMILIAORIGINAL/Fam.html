@@ -24,7 +24,7 @@
             <li>Amor</li>
             <li>Respeito</li>
         </ul>
-    </div>
+    
 
     <div class="caixa centralizar">
         <h2>Mensagem especial</h2>
@@ -47,7 +47,7 @@
     </div>
 
     <div class="caixa">
-        <h2>Nomes da Família (Gerados com FOR)</h2>
+        <h2>Fotossss</h2>
         <ul id="listaNomes"></ul>
     </div>
 
@@ -57,12 +57,19 @@
 <img id="fotoFamiliar3" width="200">
 <img id="fotoFamiliar4" width="200">
 <img id="fotoFamiliar5" width="200">
+<img id="fotoanimais" width="200">
+<img id="fotoanimais2" width="200">
+<img id="fotoanimais3" width="200">
+<img id="fotoanimais4" width="200">
+<img id="fotoanimais5" width="200">
+<img id="fotoanimais6" width="200">
+</div>
 
 
     <script>
 
 function mostrarFoto() {
-    let escolha = prompt("Digite: mãe, pai ou irmão");
+    let escolha = prompt("Digite: mãe, pai, irmão ou animais");
 
     switch(escolha) {
         case "mãe":
@@ -78,6 +85,15 @@ function mostrarFoto() {
         case "irmão":
             document.getElementById("fotoFamiliar4").src = "lucas.jpeg";
             document.getElementById("fotoFamiliar5").src = "lucas2.jpeg";
+            break;
+
+            case "animais":
+            document.getElementById("fotoanimais").src = "cinza.jpeg";
+            document.getElementById("fotoanimais2").src = "gatinho1.jpeg";
+            document.getElementById("fotoanimais3").src = "gatinho2.jpeg";
+            document.getElementById("fotoanimais4").src = "gatinho3.jpeg";
+            document.getElementById("fotoanimais5").src = "molly.jpeg";
+            document.getElementById("fotoanimais6").src = "luna.jpeg";
             break;
 
         default:
