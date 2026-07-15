@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jogo da Velha com Peças Móveis</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    text-align:center;
+    background:#f4f4f4;
+}
+
+h1{
+    color:#333;
+}
+
+#tabuleiro{
+    display:grid;
+    grid-template-columns:repeat(3,100px);
+    gap:5px;
+    justify-content:center;
+    margin:20px auto;
+}
+
+.casa{
+    width:100px;
+    height:100px;
+    background:white;
+    border:2px solid black;
+    font-size:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+}
+
+.selecionada{
+    background:lightblue;
+}
+
+#mensagem{
+    font-size:20px;
+    margin:15px;
+    font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+<h1>Jogo da Velha com Peças Móveis</h1>
+
+<div id="mensagem">Vez do jogador X</div>
+
+<div id="tabuleiro"></div>
+
+<script>
+
+const tabuleiro = Array(9).fill("");
+const casas = [];
+let jogador = "X";
+
+let pecasX = 0;
+let pecasO = 0;
+
+let faseMovimento = false;
+let selecionada = null;
+
+const mensagem = document.getElementById("mensagem");
+const tabuleiroHTML = document.getElementById("tabuleiro");
+
+for(let i=0;i<9;i++){
+    const casa = document.createElement("div");
+    casa.classList.add("casa");
+    casa.dataset.index = i;
+    casa.addEventListener("click", clicarCasa);
+    tabuleiroHTML.appendChild(casa);
+    casas.push(casa);
+}
+
+function clicarCasa(){
+
+    const index = Number(this.dataset.index);
+
+    if(!faseMovimento){
+
+        if(tabuleiro[index] !== "") return;
+
+        tabuleiro[index] = jogador;
+        this.textContent = jogador;
+
+        if(jogador==="X") pecasX++;
+        else pecasO++;
+
+        if(verificarVitoria()){
+            mensagem.textContent = `Jogador ${jogador} venceu!`;
+            desativar();
+            return;
+        }
+
+        if(pecasX===3 && pecasO===3){
+            faseMovimento = true;
+            mensagem.textContent =
+            `Fase de movimento - Jogador ${jogador==="X"?"O":"X"}`;
+        }
+
+        trocarJogador();
+    }
+
+    else{
+
+        if(selecionada===null){
+
+            if(tabuleiro[index]===jogador){
+                selecionada=index;
+                casas[index].classList.add("selecionada");
+            }
+
+        }else{
+
+            if(tabuleiro[index]===""){
+
+                tabuleiro[index]=jogador;
+                tabuleiro[selecionada]="";
+
+                atualizarTela();
+
+                if(verificarVitoria()){
+                    mensagem.textContent =
+                    `Jogador ${jogador} venceu!`;
+                    desativar();
+                    return;
+                }
+
+                selecionada=null;
+                trocarJogador();
+
+            }else{
+
+                casas[selecionada].classList.remove("selecionada");
+                selecionada=null;
+            }
+        }
+    }
+}
+
+function atualizarTela(){
+
+    casas.forEach((casa,i)=>{
+        casa.textContent=tabuleiro[i];
+        casa.classList.remove("selecionada");
+    });
+}
+
+function trocarJogador(){
+    jogador = jogador==="X" ? "O" : "X";
+    mensagem.textContent = `Vez do jogador ${jogador}`;
+}
+
+function verificarVitoria(){
+
+    const combinacoes = [
+        [0,1,2],
+        [3,4,5],
+        [6,7,8],
+        [0,3,6],
+        [1,4,7],
+        [2,5,8],
+        [0,4,8],
+        [2,4,6]
+    ];
+
+    return combinacoes.some(comb=>{
+        const [a,b,c]=comb;
+
+        return (
+            tabuleiro[a]!=="" &&
+            tabuleiro[a]===tabuleiro[b] &&
+            tabuleiro[b]===tabuleiro[c]
+        );
+    });
+}
+
+function desativar(){
+    casas.forEach(casa=>{
+        casa.style.pointerEvents="none";
+    });
+}
+
+</script>
+
+</body>
+</html>

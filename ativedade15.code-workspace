@@ -1,0 +1,52 @@
+{
+	"folders": [
+		{
+			"path": "ativedade15"
+		},
+		{
+			"path": "contato"
+		},
+		{
+			"path": "curriculo.html"
+		},
+		{
+			"path": "DoceLeitura"
+		},
+		{
+			"path": "familia"
+		},
+		{
+			"path": "familia2"
+		},
+		{
+			"path": "FAMILIAORIGINAL"
+		},
+		{
+			"path": "localizacao"
+		},
+		{
+			"path": "Perguntas.html"
+		},
+		{
+			"path": "PROVAAAAA"
+		},
+		{
+			"path": "scripttestes"
+		},
+		{
+			"path": "SobreMim"
+		},
+		{
+			"path": "teste"
+		},
+		{
+			"path": "veterinaribb"
+		},
+		{
+			"path": "blackboard"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "blackboard"
+	}
+}
